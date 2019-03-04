@@ -8,33 +8,102 @@ class Worker {
         this.hours = hours;
     }
     getSalary(hours, hourRate){
-        return(this.hours*this.hourRate)
+        return(this.hours*this.hourRate);
     }
-
+    getName(name){
+        return(this.name);
+    }
+    getSurname(surname){
+        return(this.surname);
+    }
+    getHourRate(hourRate){
+        return(this.hourRate);
+    }
+    getHours(hours){
+        return(this.hours);
+    }
 }
+
 let worker = new Worker('Ion', 'Creanga', 10, 176);
+/*
 console.log(worker.name); //afișează 'Ion'
 console.log(worker.surname); //afișează 'Creangă'
 console.log(worker.hourRate); //afișează 10
 console.log(worker.hours); //afișează 31
 console.log(worker.getSalary()); //afișează 1760 = 10*176
+*/
 
 //ex nr.2
+
 let worker1 = new Worker('Alexandr', 'Puskin', 15, 150);
+/*
 console.log(worker1.name);
 console.log(worker1.surname);
 console.log(worker1.hourRate);
 console.log(worker1.hours);
 console.log(worker1.getSalary());
+*/
 
 let worker2 = new Worker('Alexei', 'Mateevici', 18, 130);
+/*
 console.log(worker2.name);
 console.log(worker2.surname);
 console.log(worker2.hourRate);
 console.log(worker2.hours);
 console.log(worker2.getSalary());
+*/
 
-let max = worker.getSalary();
-function celMaiMareSalariu() {
-    if (worker1.getSalary() > max)
+//ex nr.3
+let max = new Worker;
+
+function celMaiMareSalariu(){
+    if(worker1.getSalary() > worker.getSalary()) {
+        max = worker1;
+    }
+    else {
+        max = worker;
+    }
+    if(worker2.getSalary() > max.getSalary()){
+        max = worker2;
+    }
+    console.log(max.name);
+    console.log(max.surname);
+    console.log(max.hourRate);
+    console.log(max.hours);
+    console.log(max.getSalary());
+
+    if(max != worker){
+        console.log(worker.name);
+        console.log(worker.surname);
+        console.log(worker.hourRate);
+        console.log(worker.hours);
+        console.log(worker.getSalary());
+        console.log('Salariul a lui ', max.name, 'este mai mare cu ', max.getSalary() - worker.getSalary());
+    }
+    if(max != worker1){
+        console.log(worker1.name);
+        console.log(worker1.surname);
+        console.log(worker1.hourRate);
+        console.log(worker1.hours);
+        console.log(worker1.getSalary());
+        console.log('Salariul a lui ', max.name, 'este mai mare cu ', max.getSalary() - worker1.getSalary());
+    }
+    if(max != worker2){
+        console.log(worker2.name);
+        console.log(worker2.surname);
+        console.log(worker2.hourRate);
+        console.log(worker2.hours);
+        console.log(worker2.getSalary());
+        console.log('Salariul a lui ', max.name, 'este mai mare cu ', max.getSalary() - worker2.getSalary());
+    }
 }
+celMaiMareSalariu();
+
+/*ex.4
+var worker = new Worker('Ion', 'Creangă', 10, 176);
+console.log(worker.getName()); // afișează Ion
+console.log(worker.getSurname()); // afișează Creangă
+console.log(worker.getRate()); // afișează 10
+console.log(worker.getHours()); // afișează 176
+console.log(worker.getSalary()); //afișează 1760 = 10*176
+*/
