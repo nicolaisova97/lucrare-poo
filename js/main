@@ -1,0 +1,40 @@
+//ex nr.1
+class Worker {
+
+    constructor(name, surname, hourRate, hours) {
+        this.name = name;
+        this.surname = surname;
+        this.hourRate = hourRate;
+        this.hours = hours;
+    }
+    getSalary(hours, hourRate){
+        return(this.hours*this.hourRate)
+    }
+
+}
+let worker = new Worker('Ion', 'Creanga', 10, 176);
+console.log(worker.name); //afișează 'Ion'
+console.log(worker.surname); //afișează 'Creangă'
+console.log(worker.hourRate); //afișează 10
+console.log(worker.hours); //afișează 31
+console.log(worker.getSalary()); //afișează 1760 = 10*176
+
+//ex nr.2
+let worker1 = new Worker('Alexandr', 'Puskin', 15, 150);
+console.log(worker1.name);
+console.log(worker1.surname);
+console.log(worker1.hourRate);
+console.log(worker1.hours);
+console.log(worker1.getSalary());
+
+let worker2 = new Worker('Alexei', 'Mateevici', 18, 130);
+console.log(worker2.name);
+console.log(worker2.surname);
+console.log(worker2.hourRate);
+console.log(worker2.hours);
+console.log(worker2.getSalary());
+
+let max = worker.getSalary();
+function celMaiMareSalariu() {
+    if (worker1.getSalary() > max)
+}
