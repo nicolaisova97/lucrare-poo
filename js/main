@@ -16,18 +16,28 @@ class Worker {
     getSurname(surname){
         return(this.surname);
     }
-    getHourRate(hourRate){
+    getRate(hourRate){
         return(this.hourRate);
     }
     getHours(hours){
         return(this.hours);
     }
+    increaseSalary(n) {
+
+        this.hourRate = n + this.hourRate;
+    }
+    setTax(n){
+        return ((this.getSalary()*n)/100);
+    }
+    getSalaryNetto(n){
+        return (this.getSalary() - this.setTax(n));
+    }
 }
 
-let worker = new Worker('Ion', 'Creanga', 10, 176);
 /*
-console.log(worker.name); //afișează 'Ion'
-console.log(worker.surname); //afișează 'Creangă'
+let worker = new Worker('Nicolae', 'Sulac', 10, 176);
+console.log(worker.name); //afișează 'Nicolae'
+console.log(worker.surname); //afișează 'Sulac'
 console.log(worker.hourRate); //afișează 10
 console.log(worker.hours); //afișează 31
 console.log(worker.getSalary()); //afișează 1760 = 10*176
@@ -35,8 +45,8 @@ console.log(worker.getSalary()); //afișează 1760 = 10*176
 
 //ex nr.2
 
-let worker1 = new Worker('Alexandr', 'Puskin', 15, 150);
 /*
+let worker1 = new Worker('Alexandr', 'Puskin', 15, 150);
 console.log(worker1.name);
 console.log(worker1.surname);
 console.log(worker1.hourRate);
@@ -44,8 +54,8 @@ console.log(worker1.hours);
 console.log(worker1.getSalary());
 */
 
-let worker2 = new Worker('Alexei', 'Mateevici', 18, 130);
 /*
+let worker2 = new Worker('Alexei', 'Mateevici', 18, 130);
 console.log(worker2.name);
 console.log(worker2.surname);
 console.log(worker2.hourRate);
@@ -54,7 +64,7 @@ console.log(worker2.getSalary());
 */
 
 //ex nr.3
-let max = new Worker;
+/*let max = new Worker;
 
 function celMaiMareSalariu(){
     if(worker1.getSalary() > worker.getSalary()) {
@@ -97,13 +107,47 @@ function celMaiMareSalariu(){
         console.log('Salariul a lui ', max.name, 'este mai mare cu ', max.getSalary() - worker2.getSalary());
     }
 }
-celMaiMareSalariu();
+celMaiMareSalariu();*/
 
-/*ex.4
-var worker = new Worker('Ion', 'Creangă', 10, 176);
-console.log(worker.getName()); // afișează Ion
-console.log(worker.getSurname()); // afișează Creangă
+/*ex.4*/
+/*var worker = new Worker('Nicolae', 'Sulac', 10, 176);
+console.log(worker.getName()); // afișează Nicolae
+console.log(worker.getSurname()); // afișează Sulac
+console.log(worker.getRate()); // afișează 10
+console.log(worker.getHours()); // afișează 176
+console.log(worker.getSalary()); //afișează 1760 = 10*176*/
+
+/*ex.5*/
+/*var worker = new Worker('Nicolae', 'Sulac', 10, 176);
+console.log(worker.getName()); // afișează Nicolae
+console.log(worker.getSurname()); // afișează Sulac
 console.log(worker.getRate()); // afișează 10
 console.log(worker.getHours()); // afișează 176
 console.log(worker.getSalary()); //afișează 1760 = 10*176
-*/
+worker.increaseSalary(2); //mărește hourRate cu 2
+console.log(worker.getSalary()); //afișează 2112 = 12*176*/
+
+/*ex.6*/
+/*var worker = new Worker('Nicolae', 'Sulac', 10, 176);
+worker.setTax(18);
+console.log(worker.getSalaryNetto(18)); //afișează 2112 – 18% = 1731.84*/
+
+/*ex.7*/
+/*function afisareInCiclu() {
+    let worker = new Worker('Nicolae', 'Sulac', 10, 176);
+    let worker1 = new Worker('Alexandr', 'Puskin', 15, 150);
+    let worker2 = new Worker('Alexei', 'Mateevici', 18, 130);
+    let masivWorkers = [worker, worker1, worker2];
+    for (let i=0; i<=2; i++){
+        console.log(masivWorkers[i].getName());
+        console.log(masivWorkers[i].getSurname());
+        console.log(masivWorkers[i].getRate());
+        console.log(masivWorkers[i].getHours());
+        console.log(masivWorkers[i].getSalary());
+        masivWorkers[i].increaseSalary(2);
+        console.log(masivWorkers[i].getSalary());
+        masivWorkers[i].setTax(18);
+        console.log(masivWorkers[i].getSalaryNetto(18));
+    }
+}
+afisareInCiclu();*/
